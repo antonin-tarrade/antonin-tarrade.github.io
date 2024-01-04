@@ -12,16 +12,26 @@
     import Project from './Project.svelte';
     export let projects = [
     {
-      name: 'Project 1',
+      name: 'Project Piplup',
       description: 'Description of Project 1',
-      technologies: 'Tech 1, Tech 2',
       link: 'https://project1.com',
+      img: '/img/piplup.jpg',
+      tag: ['Piplup', 'Cute']
     },
     {
-      name: 'Project 2',
+      name: 'Project KoupenChan',
       description: 'Description of Project 2',
-      technologies: 'Tech 3, Tech 4',
       link: 'https://project2.com',
+      img: '/img/koupenchan.jpg',
+      tag: ['KoupenChan', 'Cute']
+    },
+
+    {
+      name: 'Project Pingu',
+      description: 'Description of Project 3',
+      link: 'https://project3.com',
+      img: '/img/penguin.png',
+      tag: ['Penguin', 'Cute']
     },
   ];
 </script>
@@ -39,10 +49,12 @@
 		I am passionate about video games and I am currently learning how to make them. I am also interested in software development and I am currently learning how to make them.
 		I am currently looking for an internship in the field of video games or software development. </p>
 	</div>
+
     <h1>My Projects</h1>
   {#each projects as project (project.name)}
     <Project {project} />
   {/each}
+
 </main>
 
 <style>
@@ -50,8 +62,8 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: var(--background-color, #32353C);
-		color: var(--text-color, #ffffff);
+        background-color: var(--background-color, #19112C);
+		    color: var(--text-color, #ffffff);
     }
 
     .main-content {
