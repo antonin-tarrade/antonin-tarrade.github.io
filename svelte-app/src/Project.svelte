@@ -9,7 +9,7 @@
 
 <script>
 
-    export let project = {
+    export let data = {
         name : '',
         description : '',
         tag : [],
@@ -17,6 +17,8 @@
         link : '',
         category : Category.OTHER
     };
+
+    let project = data;
 
     import Tag from './Tag.svelte';
 </script>

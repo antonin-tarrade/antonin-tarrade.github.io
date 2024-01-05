@@ -39,10 +39,13 @@
     }
   ];
 
+  let project;
+
 
   // Filter.svelte
   import Filter from './Filter.svelte';
   import {createFilter} from './Filter.svelte';
+
 
   let filters = [
     createFilter('category', Category.GAME),
@@ -53,6 +56,9 @@
 
   let objectsToFilter = projects;
 
+
+
+  let ObjectComponent = Project;
 </script>
 
 <main class="main-content">
@@ -70,10 +76,7 @@
 	</div>
 
     <h1>My Projects</h1>
-    <Filter {filters} {objectsToFilter} />
-  {#each projects as project (project.name)}
-    <Project {project} />
-  {/each}
+    <Filter {filters} {objectsToFilter} {ObjectComponent}/>
 
 </main>
 

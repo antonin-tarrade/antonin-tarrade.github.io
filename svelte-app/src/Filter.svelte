@@ -1,15 +1,22 @@
 <!-- Filter.svelte -->
-
+<!-- 
+This Svelte component represent a generic FilterBar 
+    filters : The filters to apply
+    objectToFilter : the object to filter (must have a field corresponding to the filters)
+    ObjectComponent : The svelte Component for displaying the results of filtering. (/!\ Must have a data prop /!\)
+-->
 
 <script context="module">
-    export function createFilter(field, value) {
-        return { field, value };
+    export function createFilter(f, v) {
+        return {name:v, field:f, value:v};
     }
 </script>
 
 <script>
+
     export let filters = [];
     export let objectsToFilter = [];
+    export let ObjectComponent = {};
 
     let filteredObjects;
     let activeFilter = null;
@@ -30,6 +37,7 @@
     function resetFilter() {
         activeFilter = null;
     }
+
 </script>
 
 <style>
@@ -56,21 +64,19 @@
     >
         All
     </button>
-    {#each filters as filter (filter.field)}
+    {#each filters as filter (filter.name)}
         <button
             class="filter-button {activeFilter && activeFilter.field === filter.field ? 'active' : ''}"
             on:click={() => activeFilter = filter}
         >
-            {filter.field}
+            {filter.value}
         </button>
     {/each}
 
     <!-- Display the filtered objects -->
-    <p>Filtered Objects:</p>
     <ul>
-        {#each filteredObjects as object (object.id)}
-            <li>{object.name}</li>
-            <!-- Adjust the property names based on your actual data structure -->
+        {#each filteredObjects as object (object.name)}
+            <svelte:component this={ObjectComponent} data = {object}/>
         {/each}
     </ul>
 </div>
