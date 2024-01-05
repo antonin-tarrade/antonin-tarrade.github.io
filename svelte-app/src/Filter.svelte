@@ -17,6 +17,7 @@ This Svelte component represent a generic FilterBar
     export let filters = [];
     export let objectsToFilter = [];
     export let ObjectComponent = {};
+    export let filterName = '';
 
     let filteredObjects;
     let activeFilter = null;
@@ -41,37 +42,54 @@ This Svelte component represent a generic FilterBar
 </script>
 
 <style>
-    /* Add your styling for the filter bar if needed */
     .filter-button {
-        margin-right: 8px;
+        margin: 5px 4px 0px 4px;
         cursor: pointer;
         padding: 4px 8px;
-        border: 1px solid #ccc;
+        background : none;
+        border : none;
+        color : #ffffff;
+        text-align: center;
+        
+    }
+    
+    .filter-button.active {
+        background-color: #E0B1CB;
         border-radius: 4px;
-        background-color: #fff;
+        font-weight: bold;
     }
 
-    .filter-button.active {
-        background-color: #ddd;
+    .filterBar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+    .name {
+        margin-right: 1em;
+    }
+
 </style>
 
 <div>
-    <!-- Display filter buttons dynamically -->
-    <button
-        class="filter-button {activeFilter === null ? 'active' : ''}"
-        on:click={resetFilter}
-    >
-        All
-    </button>
-    {#each filters as filter (filter.name)}
+    <div class = "filterBar">
+        <h1 class = "name">{filterName}</h1>
+        <!-- Display filter buttons dynamically -->
         <button
-            class="filter-button {activeFilter && activeFilter.field === filter.field ? 'active' : ''}"
-            on:click={() => activeFilter = filter}
+            class="filter-button {activeFilter === null ? 'active' : ''}"
+            on:click={resetFilter}
         >
-            {filter.value}
+            All
         </button>
-    {/each}
+        {#each filters as filter (filter.name)}
+            <button
+                class="filter-button {activeFilter === filter ? 'active' : ''}"
+                on:click={() => activeFilter = filter}
+            >
+                {filter.value}
+            </button>
+        {/each}
+    </div>
 
     <!-- Display the filtered objects -->
     <ul>

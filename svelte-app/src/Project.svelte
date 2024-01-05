@@ -47,8 +47,8 @@
         position: relative;
         display: inline-block;
         margin: 1em;
-        width: 450px;
-        height: 450px;
+        width: 425px;
+        height: 425px;
         overflow: hidden;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

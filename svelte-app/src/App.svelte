@@ -39,9 +39,6 @@
     }
   ];
 
-  let project;
-
-
   // Filter.svelte
   import Filter from './Filter.svelte';
   import {createFilter} from './Filter.svelte';
@@ -55,10 +52,8 @@
   ];
 
   let objectsToFilter = projects;
-
-
-
   let ObjectComponent = Project;
+  let filterName = 'My Projects';
 </script>
 
 <main class="main-content">
@@ -75,8 +70,9 @@
 		I am currently looking for an internship in the field of video games or software development. </p>
 	</div>
 
-    <h1>My Projects</h1>
-    <Filter {filters} {objectsToFilter} {ObjectComponent}/>
+  <div class="projects">
+    <Filter {filterName} {filters} {objectsToFilter} {ObjectComponent}/>
+  </div>
 
 </main>
 
@@ -112,7 +108,7 @@
     }
 
 	.about{
-		text-align: left;
+		text-align: justify;
 	}
 
 	.about-title{
@@ -125,5 +121,9 @@
 		margin-top: 0.1em;
 		max-width: 30em;
 	}
+
+  .projects{
+    margin-top: 5em;
+  }
 
 </style>
