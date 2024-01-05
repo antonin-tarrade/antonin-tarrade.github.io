@@ -10,30 +10,49 @@
 
     // Projects.svelte
     import Project from './Project.svelte';
+    import { Category } from './Project.svelte';
     export let projects = [
     {
       name: 'Project Piplup',
       description: 'Description of Project 1',
       link: 'https://project1.com',
       img: '/img/piplup.jpg',
-      tag: ['Piplup', 'Cute']
+      tag: ['Piplup', 'Cute'],
+      category: Category.PERSONAL
     },
     {
       name: 'Project KoupenChan',
       description: 'Description of Project 2',
       link: 'https://project2.com',
       img: '/img/koupenchan.jpg',
-      tag: ['KoupenChan', 'Cute']
+      tag: ['KoupenChan', 'Cute'],
+      category: Category.SCHOOL
     },
-
     {
       name: 'Project Pingu',
       description: 'Description of Project 3',
       link: 'https://project3.com',
       img: '/img/penguin.png',
-      tag: ['Penguin', 'Cute']
-    },
+      tag: ['Penguin', 'Cute'],
+      category: Category.GAME
+
+    }
   ];
+
+
+  // Filter.svelte
+  import Filter from './Filter.svelte';
+  import {createFilter} from './Filter.svelte';
+
+  let filters = [
+    createFilter('category', Category.GAME),
+    createFilter('category', Category.SCHOOL),
+    createFilter('category', Category.PERSONAL),
+    createFilter('category', Category.OTHER)
+  ];
+
+  let objectsToFilter = projects;
+
 </script>
 
 <main class="main-content">
@@ -51,6 +70,7 @@
 	</div>
 
     <h1>My Projects</h1>
+    <Filter {filters} {objectsToFilter} />
   {#each projects as project (project.name)}
     <Project {project} />
   {/each}

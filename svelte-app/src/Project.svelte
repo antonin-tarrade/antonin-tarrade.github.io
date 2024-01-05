@@ -1,10 +1,13 @@
-<script>
+<script context="module">
     export const Category = {
         GAME: 'Game',
-        SCHOOLPROJECT: 'School Project',
-        PERSONALPROJECT: 'Personal Project',
+        SCHOOL: 'School',
+        PERSONAL: 'Personal',
         OTHER: 'Other'
     };
+</script>
+
+<script>
 
     export let project = {
         name : '',
