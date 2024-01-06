@@ -1,17 +1,17 @@
 <script>
-    // Nav.svelte
-    import Nav from './Nav.svelte';
-    export let navLinks = {
-        'About': '/',
-        'Projects': '/projects',
-        'Contact': '/contact',
-        'PPP': '/ppp'
-    };
+  // Nav.svelte
+  import Nav from './Nav.svelte';
+  export let navLinks = {
+      'About': '/',
+      'Projects': '/projects',
+      'Contact': '/contact',
+      'PPP': '/ppp'
+  };
 
-    // Projects.svelte
-    import Project from './Project.svelte';
-    import { Category } from './Project.svelte';
-    export let projects = [
+  // Projects.svelte
+  import Project from './Project.svelte';
+  import { Category } from './Project.svelte';
+  export let projects = [
     {
       name: 'Project Piplup',
       description: 'Description of Project 1',
@@ -43,7 +43,6 @@
   import Filter from './Filter.svelte';
   import {createFilter} from './Filter.svelte';
 
-
   let filters = [
     createFilter('category', Category.GAME),
     createFilter('category', Category.SCHOOL),
@@ -54,6 +53,34 @@
   let objectsToFilter = projects;
   let ObjectComponent = Project;
   let filterName = 'My Projects';
+
+
+  // Social.svelte
+  import Social from './Social.svelte';
+
+
+  let socials = [
+    {
+      name: 'LinkedIn',
+      link: '',
+      svgPath: '/icons/linkedin.svg'
+    },
+    {
+      name: 'Github',
+      link: '',
+      svgPath: '/icons/github.svg'
+    },
+    {
+      name: 'CV',
+      link: '',
+      svgPath: '/icons/profile.svg'
+    },
+    {
+      name: 'Mail',
+      link: '',
+      svgPath: '/icons/email.svg'
+    }
+  ]
 </script>
 
 <main class="main-content">
@@ -72,6 +99,16 @@
 
   <div class="projects">
     <Filter {filterName} {filters} {objectsToFilter} {ObjectComponent}/>
+  </div>
+
+  <div class = "contacts">
+    <h1>Contacts</h1>
+    <h2> Let's get in touch !</h2>
+    <div class = "socials">
+      {#each socials as social (social.name)}
+        <Social {social}/>
+      {/each}
+    </div>
   </div>
 
 </main>
@@ -124,6 +161,15 @@
 
   .projects{
     margin-top: 5em;
+  }
+
+  .contacts{
+    margin-top: 5em;
+  }
+
+  .contacts h1{
+    font-size: 2.5em;
+    text-align: left;
   }
 
 </style>
