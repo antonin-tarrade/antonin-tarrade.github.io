@@ -18,7 +18,7 @@
 
 
 <div class = "social">
-    <a href={social.link}>
+    <a href={social.link} target="_blank">
         <button>
             <div class="icon">{@html svgContent}</div>
             <p>{social.name}</p>
