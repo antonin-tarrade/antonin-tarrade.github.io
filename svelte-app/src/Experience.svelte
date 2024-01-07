@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class ="document">
-            <a href={experience.document.link}>
+            <a href={experience.document.link} target="_blank">
                 {@html documentSvg}
                 <p>See {experience.document.name}</p>
             </a>

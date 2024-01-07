@@ -71,7 +71,7 @@
       tags: ['DB', 'AppSheet', 'Excel'],
       document: {
         name: 'Document 1',
-        link: 'https://document1.com'
+        link: ''
       }
     },
     {
@@ -88,8 +88,46 @@
       tags: ['Python', 'Mako', 'LateX'],
       document: {
         name: 'Internship report',
-        link: 'https://document2.com'
+        link: '/document/Report-Irit.pdf'
       }
+    },
+  ]
+
+
+  // ----Resume----
+  import Resume from './Resume.svelte';
+  let resumes = [
+    {
+      language: 'English',
+      icon: '/icons/united-kingdom.svg',
+      link: '/document/Cv-English.pdf'
+    },
+    {
+      language: 'French',
+      icon: '/icons/france.svg',
+      link: '/document/Cv-Francais.pdf'
+    }
+  ]
+
+
+
+  // ----CoverLetter----
+  import CoverLetter from './CoverLetter.svelte';
+  let coverLetters = [
+    {
+      company: 'Nintendo',
+      language: 'EN',
+      link: '/document/Nintendo-Cover-Letter.pdf'
+    },
+    {
+      company: 'Riot Games',
+      language: 'EN',
+      link: '/document/Riot-Games-Cover-Letter.pdf'
+    },
+    {
+      company: 'Ubisoft',
+      language: 'FR',
+      link:   '/document/Ubisoft-Cover-Letter.pdf'
     },
   ]
 
@@ -107,11 +145,11 @@
       link: 'https://github.com/antonin-tarrade',
       svgPath: '/icons/github.svg'
     },
-    {
-      name: 'CV',
-      link: '',
-      svgPath: '/icons/profile.svg'
-    },
+    //{
+     // name: 'CV',
+     // link: '',
+      //svgPath: '/icons/profile.svg'
+    //},
     {
       name: 'Mail',
       link: '',
@@ -142,10 +180,35 @@
     <h1>Professional Project - PPP</h1>
     <h2>Experiences</h2>
     {#each experiences as experience (experience.role)}
-      <Experience {experience}/>
+    <Experience {experience}/>
     {/each}
+    
+    <div class="PPP">
+      <h2>PPP Slides</h2>
+      <div class="slides">
+        <a href=" " target="_blank">
+          <p>Download the slides here</p>
+        </a>
+      </div>
+    </div>
   </div>
 
+  <div class="job-application">
+    <h1>Job (Internship) Applications</h1>
+    <h2>Resumes</h2>
+    <div class="resume-buttons">
+      {#each resumes as resume (resume.language)}
+      <Resume {resume}/>
+      {/each}
+    </div>
+    <h2>Cover Letters</h2>
+    <div class="cover-letters">
+      {#each coverLetters as letter (letter.company)}
+      <CoverLetter {letter}/>
+      {/each}
+    </div> 
+  </div>
+  
   <div class = "contacts">
     <h1>Contacts</h1>
     <h2> Let's get in touch !</h2>
@@ -208,6 +271,13 @@
     margin-top: 5em;
   }
 
+  .PPP{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .experiences h1{
     font-size: 2.5em;
     text-align: left;
@@ -217,6 +287,49 @@
     font-size: 2em;
     text-align: center;
   }
+
+  .PPP .slides{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 30%;
+    height: 2em;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .PPP .slides a{
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .job-application h1{
+    font-size: 2.5em;
+    text-align: left;
+  }
+
+  .job-application h2{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+
+  .resume-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .cover-letters{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 
   .contacts{
     margin-top: 5em;
