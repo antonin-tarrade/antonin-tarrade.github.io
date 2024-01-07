@@ -1,5 +1,5 @@
 <script>
-  // Nav.svelte
+  // ----Nav----
   import Nav from './Nav.svelte';
   export let navLinks = {
       'About': '/',
@@ -8,7 +8,7 @@
       'PPP': '/ppp'
   };
 
-  // Projects.svelte
+  // ----Project----
   import Project from './Project.svelte';
   import { Category } from './Project.svelte';
   export let projects = [
@@ -39,7 +39,7 @@
     }
   ];
 
-  // Filter.svelte
+  // ----Filter----
   import Filter from './Filter.svelte';
   import {createFilter} from './Filter.svelte';
 
@@ -54,20 +54,57 @@
   let ObjectComponent = Project;
   let filterName = 'My Projects';
 
+  // ----Experience----
+  import Experience from './Experience.svelte';
+  let experiences = [
+    {
+      role: 'App Developer',
+      company: {
+        name: 'AIRBUS',
+        logo: '/img/airbus.png',
+        site: 'https://www.airbus.com/en'
+      },
+      year: '2023',
+      description: 'Lorem ipsum dolor sit amet consectetur. Cursus et sodales eu amet ullamcorper hendrerit risus. Risus risus lacinia ultricies elit ',
+      country: 'France',
+      city: 'Toulouse',
+      tags: ['DB', 'AppSheet', 'Excel'],
+      document: {
+        name: 'Document 1',
+        link: 'https://document1.com'
+      }
+    },
+    {
+      role: 'Software Developer',
+      company: {
+        name: 'Irit',
+        logo: '/img/irit.png',
+        site: 'https://www.irit.fr'
+      },
+      year: '2022',
+      description: 'Lorem ipsum dolor sit amet consectetur. Cursus et sodales eu amet ullamcorper hendrerit risus. Risus risus lacinia ultricies elit ',
+      country: 'France',
+      city: 'Toulouse',
+      tags: ['Python', 'Mako', 'LateX'],
+      document: {
+        name: 'Internship report',
+        link: 'https://document2.com'
+      }
+    },
+  ]
 
-  // Social.svelte
+
+  // ----Social----
   import Social from './Social.svelte';
-
-
   let socials = [
     {
       name: 'LinkedIn',
-      link: '',
+      link: 'https://www.linkedin.com/in/antonin-tarrade-5700a8252/',
       svgPath: '/icons/linkedin.svg'
     },
     {
       name: 'Github',
-      link: '',
+      link: 'https://github.com/antonin-tarrade',
       svgPath: '/icons/github.svg'
     },
     {
@@ -99,6 +136,14 @@
 
   <div class="projects">
     <Filter {filterName} {filters} {objectsToFilter} {ObjectComponent}/>
+  </div>
+
+  <div class="experiences">
+    <h1>Professional Project - PPP</h1>
+    <h2>Experiences</h2>
+    {#each experiences as experience (experience.role)}
+      <Experience {experience}/>
+    {/each}
   </div>
 
   <div class = "contacts">
@@ -161,6 +206,16 @@
 
   .projects{
     margin-top: 5em;
+  }
+
+  .experiences h1{
+    font-size: 2.5em;
+    text-align: left;
+  }
+
+  .experiences h2{
+    font-size: 2em;
+    text-align: center;
   }
 
   .contacts{
