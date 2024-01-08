@@ -1,5 +1,5 @@
 <script>
-
+    import { base } from '$app/paths';
     import { onMount } from 'svelte';
     import { fetchFileContent } from './utils';
     import Tag from './Tag.svelte';
@@ -31,11 +31,11 @@
     let documentSvg;
 
     onMount(async () => {
-        plusSvg = await fetchFileContent('/icons/plus.svg');
-        minusSvg = await fetchFileContent('/icons/minus.svg');
-        pinSvg = await fetchFileContent('/icons/pin.svg');
-        exportSvg = await fetchFileContent('/icons/export.svg');
-        documentSvg = await fetchFileContent('/icons/document.svg');
+        plusSvg = await fetchFileContent(base + '/icons/plus.svg');
+        minusSvg = await fetchFileContent(base + '/icons/minus.svg');
+        pinSvg = await fetchFileContent(base + '/icons/pin.svg');
+        exportSvg = await fetchFileContent(base + '/icons/export.svg');
+        documentSvg = await fetchFileContent(base + '/icons/document.svg');
     });
 
 </script>
