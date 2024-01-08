@@ -1,7 +1,7 @@
 var ghpages = require('gh-pages');
 
 ghpages.publish(
-    'public', // path to public directory
+    './public', // path to public directory
     {
         branch: 'gh-pages',
         repo: 'https://github.com/antonin-tarrade/Eportfolio', // Update to point to your repository  
