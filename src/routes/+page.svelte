@@ -1,12 +1,13 @@
 <script>
-  // ----Nav----
+  import { base } from '$app/paths';
+  // ----Nav---- 
   import Nav from './Nav.svelte';
   export let navLinks = {
-      'About': '/',
-      'Projects': '/projects',
-      'Experiences' : '/experiences',
-      'PPP': '/ppp',
-      'Contact': '/contact'
+      'About': base + '/',
+      'Projects': base + '/projects',
+      'Experiences' : base + '/experiences',
+      'PPP': base + '/ppp',
+      'Contact': base + '/contact'
   };
 
   // ----Project----
@@ -17,7 +18,7 @@
       name: 'Penguin Survivors',
       description: 'This game project originated from a <i>"Pass the game"</i> Game Jam organized by my school game dev club.\n The goal of the game is to survive each wave of enemy penguins, by shooting snowballs at them.',
       link: 'https://github.com/antonin-tarrade/ProjectPenguin',
-      video : '/video/project-penguin.mp4',
+      video : base + '/video/project-penguin.mp4',
       tag: ['Unity2D', 'C#', 'Game Jam', 'WIP'],
       category: Category.GAME
     },
@@ -25,7 +26,7 @@
       name: 'Satellite Graph Visualization Project',
       description: 'This project is made for the <i>Graph theory</i> course of my school. The goal is to visualize and annalyse the graph representing a cluster of satellites. For this project, the choice of the tools was free. I chose to use Unity3D in the goal of better representing the situation as well as to learn more about Unity3D. We have recently just started this project, so it is still a work in progress.',
       link: 'https://github.com/antonin-tarrade/Projet-Graphe',
-      img: '/img/graph-project.png',
+      img: base + '/img/graph-project.png',
       tag: ['Unity3D', 'C#', 'Graph Theory', 'WIP'],
       category: Category.SCHOOL
     },
@@ -33,7 +34,7 @@
       name: 'Eportfolio',
       description: 'This eportfolio was made using the <i>Svelte</i> framework. After looking at the different options, I decided to use svelte because it is a open source framework and also for its Component-Based Architecture and performance. The goal of this eportfolio is to showcase my projects and experiences.',
       link: 'https://github.com/antonin-tarrade/Eportfolio',
-      img: '/img/svelte.png',
+      img: base + '/img/svelte.png',
       tag: ['Svelte', 'HTML', 'CSS', 'Javascript'],
       category: Category.PERSONAL
     },
@@ -41,7 +42,7 @@
       name: 'RaffIDE',
       description: 'This project was made for the <i>Java POO Programming</i> course of my school. The goal was to apply POO concepts in Java as well as work in a large team (8-9 people) using the Agile method. This project is an IDE for the <i>Refinning method</i> of constructing an aplication. This project is completly in french.',
       link: 'https://github.com/newtondotcom/RaffIDE',
-      img: '/img/raffIde.png',
+      img: base + '/img/raffIde.png',
       tag: ['Java', 'JavaSwing','Scrum'],
       category: Category.SCHOOL
     }
@@ -69,7 +70,7 @@
       role: 'App Developer',
       company: {
         name: 'AIRBUS',
-        logo: '/img/airbus.png',
+        logo: base + '/img/airbus.png',
         site: 'https://www.airbus.com/en'
       },
       year: '2023',
@@ -86,7 +87,7 @@
       role: 'Software Developer',
       company: {
         name: 'IRIT',
-        logo: '/img/irit.png',
+        logo: base + '/img/irit.png',
         site: 'https://www.irit.fr'
       },
       year: '2022',
@@ -97,7 +98,7 @@
       document: {
         name: 'Internship report',
         confidential: false,
-        link: '/document/Report-IRIT.pdf'
+        link: base + '/document/Report-IRIT.pdf'
       }
     },
   ]
@@ -107,13 +108,13 @@
   let resumes = [
     {
       language: 'English',
-      icon: '/icons/united-kingdom.svg',
-      link: '/document/Cv-English.pdf'
+      icon: base + '/icons/united-kingdom.svg',
+      link: base + '/document/Cv-English.pdf'
     },
     {
       language: 'French',
-      icon: '/icons/france.svg',
-      link: '/document/Cv-Francais.pdf'
+      icon: base + '/icons/france.svg',
+      link: base + '/document/Cv-Francais.pdf'
     }
   ]
 
@@ -124,17 +125,17 @@
     {
       company: 'Nintendo',
       language: 'EN',
-      link: '/document/Nintendo-Cover-Letter.pdf'
+      link: base + '/document/Nintendo-Cover-Letter.pdf'
     },
     {
       company: 'Riot Games',
       language: 'EN',
-      link: '/document/Riot-Games-Cover-Letter.pdf'
+      link: base + '/document/Riot-Games-Cover-Letter.pdf'
     },
     {
       company: 'Ubisoft',
       language: 'FR',
-      link:   '/document/Ubisoft-Cover-Letter.pdf'
+      link:   base + '/document/Ubisoft-Cover-Letter.pdf'
     },
   ]
 
@@ -145,22 +146,22 @@
     {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/antonin-tarrade-5700a8252/',
-      svgPath: '/icons/linkedin.svg'
+      svgPath: base + '/icons/linkedin.svg'
     },
     {
       name: 'Github',
       link: 'https://github.com/antonin-tarrade',
-      svgPath: '/icons/github.svg'
+      svgPath: base + '/icons/github.svg'
     },
     //{
      // name: 'CV',
      // link: '',
-      //svgPath: '/icons/profile.svg'
+      //svgPath: base + '/icons/profile.svg'
     //},
     {
       name: 'Mail',
       link: 'mailto:antonin.tarrade@etu.inp-toulouse.fr',
-      svgPath: '/icons/email.svg'
+      svgPath: base + '/icons/email.svg'
     }
   ]
 </script>
@@ -198,7 +199,7 @@
     <div class="PPP" id="ppp">
       <h2>PPP Slides</h2>
       <div class="slides">
-        <a href=" " target="_blank">
+        <a target="_blank">
           <p>Download the slides here</p>
         </a>
       </div>
