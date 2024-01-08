@@ -18,6 +18,7 @@
         tags : [],
         document : {
             name : '',
+            confidential : false,
             link : ''
         }
     }
@@ -76,9 +77,9 @@
             </div>
         </div>
         <div class ="document">
-            <a href={experience.document.link} target="_blank">
+            <a href={experience.document.link} on:click={() => alert("This document is confidential")}  target="_blank">
                 {@html documentSvg}
-                <p>See {experience.document.name}</p>
+                <p>See {experience.document.name }</p>
             </a>
         </div>
     </div>

@@ -13,6 +13,7 @@
         name : '',
         description : '',
         tag : [],
+        video : '',
         img : '',
         link : '',
         category : Category.OTHER
@@ -24,14 +25,25 @@
 </script>
 
 <div class = "card">
+    {#if project.video}
+    <div class="video-container">
+        <video class="video-blur" autoplay loop muted preload="auto">
+          <source src={project.video} type="video/mp4">
+        </video>
+        <video class="video-focus" autoplay loop muted preload="auto">
+          <source src={project.video} type="video/mp4">
+        </video>
+      </div>
+    {:else}
     <img src = {project.img} alt = {`Image for ${project.name}`} />
+    {/if}
     <div class = "card-info">
         <div class = "main-info">
             <h3>{project.name}</h3>
-            <a href={project.link}>Visit Project</a>
+            <a href={project.link} target="_blank">Visit Project</a>
         </div>
         <div class = "sub-info">
-            <p>{project.description}</p>
+            <p>{@html project.description}</p>
             <div class= "tags">
                 {#each project.tag as tag (tag)}
                     <Tag tag={tag} />
@@ -47,8 +59,8 @@
         position: relative;
         display: inline-block;
         margin: 1em;
-        width: 425px;
-        height: 425px;
+        width: 500px;
+        height: 400px;
         overflow: hidden;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -59,6 +71,29 @@
         height: 100%;
         object-fit: cover;
         transition: opacity 0.3s ease;
+    }
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .video-blur {
+        position: absolute;
+        width: 150%; /* Adjust this value to control the zoom level */
+        height: 150%; /* Adjust this value to control the zoom level */
+        left: -25%; /* Adjust this value to center the video */
+        top: -25%; /* Adjust this value to center the video */
+        object-fit: cover;
+        filter: blur(8px); /* Adjust this value to control the blur level */
+        opacity: 0.8; /* Adjust this value to control the opacity */
+    }
+
+    .video-focus {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .card-info {
@@ -79,6 +114,8 @@
         box-sizing: border-box;
     }
 
+
+
     .card:hover img {
         opacity: 0.5;
     }
@@ -92,6 +129,12 @@
         padding-bottom: 5em;
     }
 
+    .main-info h3{
+        font-size: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+    
     .main-info a{
         color: #ffffff;
         border : solid;
@@ -99,14 +142,20 @@
         border-radius: 20px;
         border-color : #5E548E;
     }
-
+    
     .main-info a:hover{
         background-color: #5E548E;
         text-decoration: none;
         transition: background-color 0.4s ease;
     }
-
+    
+    .sub-info p{
+        font-size: 0.85em;
+        text-align: left;
+        margin-bottom: 0.1em;
+    }
     .tags{
         font-size: 0.8em;
     }
+
 </style>

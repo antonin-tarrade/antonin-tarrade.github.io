@@ -9,4 +9,20 @@ export async function fetchFileContent(filePath) {
       return null;
     }
   }
-  
+
+
+export function scrollTo(node, id) {
+  node.addEventListener('click', event => {
+    event.preventDefault();
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  });
+
+  return {
+    destroy() {
+      node.removeEventListener('click', event => {
+        event.preventDefault();
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  };
+}

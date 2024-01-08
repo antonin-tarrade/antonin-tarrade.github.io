@@ -1,13 +1,17 @@
 <!-- Nav.svelte -->
 
 <script>
+
+    // ----Scroll func----
+    import { scrollTo } from './utils';
+
     export let links = {};
 </script>
   
   <nav>
     <ul>
       {#each Object.keys(links) as link (link)}
-        <li><a href={links[link]}>{link}</a></li>
+        <li><a href={links[link]} use:scrollTo={link.toLowerCase()}>{link}</a></li>
       {/each}
     </ul>
   </nav>

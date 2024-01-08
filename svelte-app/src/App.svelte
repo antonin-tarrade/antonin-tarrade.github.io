@@ -4,8 +4,9 @@
   export let navLinks = {
       'About': '/',
       'Projects': '/projects',
-      'Contact': '/contact',
-      'PPP': '/ppp'
+      'Experiences' : '/experiences',
+      'PPP': '/ppp',
+      'Contact': '/contact'
   };
 
   // ----Project----
@@ -13,29 +14,36 @@
   import { Category } from './Project.svelte';
   export let projects = [
     {
-      name: 'Project Piplup',
-      description: 'Description of Project 1',
-      link: 'https://project1.com',
-      img: '/img/piplup.jpg',
-      tag: ['Piplup', 'Cute'],
-      category: Category.PERSONAL
+      name: 'Penguin Survivors',
+      description: 'This game project originated from a <i>"Pass the game"</i> Game Jam organized by my school game dev club.\n The goal of the game is to survive each wave of enemy penguins, by shooting snowballs at them.',
+      link: 'https://github.com/antonin-tarrade/ProjectPenguin',
+      video : '/video/project-penguin.mp4',
+      tag: ['Unity2D', 'C#', 'Game Jam', 'WIP'],
+      category: Category.GAME
     },
     {
-      name: 'Project KoupenChan',
-      description: 'Description of Project 2',
-      link: 'https://project2.com',
-      img: '/img/koupenchan.jpg',
-      tag: ['KoupenChan', 'Cute'],
+      name: 'Satellite Graph Visualization Project',
+      description: 'This project is made for the <i>Graph theory</i> course of my school. The goal is to visualize and annalyse the graph representing a cluster of satellites. For this project, the choice of the tools was free. I chose to use Unity3D in the goal of better representing the situation as well as to learn more about Unity3D. We have recently just started this project, so it is still a work in progress.',
+      link: 'https://github.com/antonin-tarrade/Projet-Graphe',
+      img: '/img/graph-project.png',
+      tag: ['Unity3D', 'C#', 'Graph Theory', 'WIP'],
       category: Category.SCHOOL
     },
     {
-      name: 'Project Pingu',
-      description: 'Description of Project 3',
-      link: 'https://project3.com',
-      img: '/img/penguin.png',
-      tag: ['Penguin', 'Cute'],
-      category: Category.GAME
-
+      name: 'Eportfolio',
+      description: 'This eportfolio was made using the <i>Svelte</i> framework. After looking at the different options, I decided to use svelte because it is a open source framework and also for its Component-Based Architecture and performance. The goal of this eportfolio is to showcase my projects and experiences.',
+      link: 'https://github.com/antonin-tarrade/Eportfolio',
+      img: '/img/svelte.png',
+      tag: ['Svelte', 'HTML', 'CSS', 'Javascript'],
+      category: Category.PERSONAL
+    },
+    {
+      name: 'RaffIDE',
+      description: 'This project was made for the <i>Java POO Programming</i> course of my school. The goal was to apply POO concepts in Java as well as work in a large team (8-9 people) using the Agile method. This project is an IDE for the <i>Refinning method</i> of constructing an aplication. This project is completly in french.',
+      link: 'https://github.com/newtondotcom/RaffIDE',
+      img: '/img/raffIde.png',
+      tag: ['Java', 'JavaSwing','Scrum'],
+      category: Category.SCHOOL
     }
   ];
 
@@ -70,8 +78,8 @@
       city: 'Toulouse',
       tags: ['DB', 'AppSheet', 'Excel'],
       document: {
-        name: 'Document 1',
-        link: ''
+        name: 'Internship report',
+        confidential: true,
       }
     },
     {
@@ -88,11 +96,11 @@
       tags: ['Python', 'Mako', 'LateX'],
       document: {
         name: 'Internship report',
+        confidential: false,
         link: '/document/Report-Irit.pdf'
       }
     },
   ]
-
 
   // ----Resume----
   import Resume from './Resume.svelte';
@@ -108,7 +116,6 @@
       link: '/document/Cv-Francais.pdf'
     }
   ]
-
 
 
   // ----CoverLetter----
@@ -152,7 +159,7 @@
     //},
     {
       name: 'Mail',
-      link: '',
+      link: 'mailto:antonin.tarrade@etu.inp-toulouse.fr',
       svgPath: '/icons/email.svg'
     }
   ]
@@ -164,7 +171,7 @@
         <h1 class="name-title">ANTONIN TARRADE</h1>
         <h2 class="name-subtitle">Student in Computer Science, Aspiring Game developer & Software developer</h2>
     </div>
-	<div class = "about">
+	<div class = "about" id="about">
 		<h1 class="about-title"> About me </h1>
         <!-- TODO : Change text content -->
 		<p class="about-text"> I am a student in Computer Science at the ENSEIHT, France. I am currently in my second year of Engineer's degree. 
@@ -172,18 +179,18 @@
 		I am currently looking for an internship in the field of video games or software development. </p>
 	</div>
 
-  <div class="projects">
+  <div class="projects" id="projects">
     <Filter {filterName} {filters} {objectsToFilter} {ObjectComponent}/>
   </div>
 
-  <div class="experiences">
+  <div class="experiences" id="experiences">
     <h1>Professional Project - PPP</h1>
     <h2>Experiences</h2>
     {#each experiences as experience (experience.role)}
     <Experience {experience}/>
     {/each}
     
-    <div class="PPP">
+    <div class="PPP" id="ppp">
       <h2>PPP Slides</h2>
       <div class="slides">
         <a href=" " target="_blank">
@@ -212,13 +219,12 @@
   <div class = "contacts">
     <h1>Contacts</h1>
     <h2> Let's get in touch !</h2>
-    <div class = "socials">
+    <div class = "socials" id=contact>
       {#each socials as social (social.name)}
         <Social {social}/>
       {/each}
     </div>
   </div>
-
 </main>
 
 <style>
@@ -228,6 +234,7 @@
         height: 100%;
         background-color: var(--background-color, #19112C);
 		    color: var(--text-color, #ffffff);
+        scroll-behavior: smooth;
     }
 
     .main-content {
