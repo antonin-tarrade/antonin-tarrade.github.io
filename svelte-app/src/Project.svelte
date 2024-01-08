@@ -40,7 +40,7 @@
     <div class = "card-info">
         <div class = "main-info">
             <h3>{project.name}</h3>
-            <a href={project.link} target="_blank">Visit Project</a>
+            <a href={project.link} target="_blank">View Project</a>
         </div>
         <div class = "sub-info">
             <p>{@html project.description}</p>

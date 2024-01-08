@@ -174,9 +174,14 @@
 	<div class = "about" id="about">
 		<h1 class="about-title"> About me </h1>
         <!-- TODO : Change text content -->
-		<p class="about-text"> I am a student in Computer Science at the ENSEIHT, France. I am currently in my second year of Engineer's degree. 
-		I am passionate about video games and I am currently learning how to make them. I am also interested in software development and I am currently learning how to make them.
-		I am currently looking for an internship in the field of video games or software development. </p>
+		<p class="about-text"> I am a student in Computer Science at ENSEEIHT, France. I am currently in my second year of Engineer's degree.
+      <br>
+      <br>
+      Passionate about video games since childhood and president of the video game development club of my school, I have been developing games for more than 2 years (and playing for more than 15 &#x1F604).
+      I am also particularly interested in software and web development.
+      <br>
+      <br>
+      I am currently looking for a 4-to-6 months internship in the field of video games or software development to explore their respective professional world, as well as gain more experience.</p>
 	</div>
 
   <div class="projects" id="projects">
