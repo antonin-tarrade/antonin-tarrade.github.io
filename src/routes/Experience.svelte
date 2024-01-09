@@ -197,6 +197,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-decoration: none;
     }
     
     
@@ -228,6 +229,7 @@
         justify-content: center;
         align-items: center;
         margin: 1em 1em 1em 1em;
+        text-decoration: none;
     }
 
     .big-container .document a p{
@@ -243,8 +245,6 @@
     .big-container .document a:hover p{
         color: #BE95C4;
     }
-
-
 
 
     /*----Icons---- */

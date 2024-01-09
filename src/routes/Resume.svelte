@@ -31,6 +31,7 @@
         margin: 0em 1em 0em 1em;
         border-radius: 10px;
         background-color: #BE95C4;
+        text-decoration: none;
     }
 
     .resume h2{

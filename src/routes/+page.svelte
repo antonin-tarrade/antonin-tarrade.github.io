@@ -12,7 +12,7 @@
 
   // ----Project----
   import Project from './Project.svelte';
-  import { Category } from './Project.svelte';
+  import { Category } from './Project.svelte';  
   export let projects = [
     {
       name: 'Penguin Survivors',
@@ -225,7 +225,7 @@
   <div class = "contacts">
     <h1>Contacts</h1>
     <h2> Let's get in touch !</h2>
-    <div class = "socials" id=contact>
+    <div class = "socials" id="contact">
       {#each socials as social (social.name)}
         <Social {social}/>
       {/each}
@@ -238,6 +238,7 @@
         margin: 0;
         padding: 0;
         height: 100%;
+        font: 16px 'Roboto', sans-serif;
         background-color: var(--background-color, #19112C);
 		    color: var(--text-color, #ffffff);
         scroll-behavior: smooth;
@@ -317,6 +318,11 @@
     color: #000000;
   }
 
+  .PPP .slides:hover{
+    cursor: pointer;
+    background-color: #BE95C4;
+  }
+
   .job-application h1{
     font-size: 2.5em;
     text-align: left;
@@ -351,6 +357,13 @@
   .contacts h1{
     font-size: 2.5em;
     text-align: left;
+  }
+
+  .socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
 </style>

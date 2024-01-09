@@ -31,6 +31,7 @@
         align-items: center;
         justify-content: flex-start;
         margin: 0em 1em 0em 1em;
+        text-decoration: none;
     }
 
     .letter h2{
