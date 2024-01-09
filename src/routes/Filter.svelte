@@ -50,13 +50,16 @@ This Svelte component represent a generic FilterBar
         border : none;
         color : #ffffff;
         text-align: center;
+        font-size: 1em;
+        transition: font-size 0.3s ease;
         
     }
     
     .filter-button.active {
         background-color: #E0B1CB;
-        border-radius: 4px;
+        border-radius: 5px;
         font-weight: bold;
+        font-size: 1.3em;
     }
 
     .filterBar {

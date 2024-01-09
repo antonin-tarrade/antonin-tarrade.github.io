@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class ="document">
-            <a href={experience.document.link} on:click={() => alert("This document is confidential")}  target="_blank">
+            <a href={experience.document.link} on:click={() => {if(experience.document.confidential) alert("This document is confidential")}} target="_blank">
                 {@html documentSvg}
                 <p>See {experience.document.name }</p>
             </a>

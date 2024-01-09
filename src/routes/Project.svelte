@@ -141,6 +141,7 @@
         padding : 0.5em;
         border-radius: 20px;
         border-color : #5E548E;
+        text-decoration: none;
     }
     
     .main-info a:hover{

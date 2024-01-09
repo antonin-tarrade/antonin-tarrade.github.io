@@ -74,10 +74,10 @@
         site: 'https://www.airbus.com/en'
       },
       year: '2023',
-      description: 'Lorem ipsum dolor sit amet consectetur. Cursus et sodales eu amet ullamcorper hendrerit risus. Risus risus lacinia ultricies elit ',
+      description: 'This internship focused on developing the initial version of an application using a low-code tool, ensuring a rapid and secure deployment for potential approval.My responsibilities included data extraction and processing, creating a mobile/web application through the AppSheet platform but also conducting tool presentations for potential end-users.',
       country: 'France',
       city: 'Toulouse',
-      tags: ['DB', 'AppSheet', 'Excel'],
+      tags: ['Data Bases', 'AppSheet', 'Excel', 'SAFe'],
       document: {
         name: 'Internship report',
         confidential: true,
@@ -91,7 +91,7 @@
         site: 'https://www.irit.fr'
       },
       year: '2022',
-      description: 'Lorem ipsum dolor sit amet consectetur. Cursus et sodales eu amet ullamcorper hendrerit risus. Risus risus lacinia ultricies elit ',
+      description: 'During this internship, my goal was to create a Python program in order to generate multiple choice quizzes automatically. I had to generate multiple quizzes related to several teaching platforms, such as Moodle and AMC, from a single description.',
       country: 'France',
       city: 'Toulouse',
       tags: ['Python', 'Mako', 'LateX'],
@@ -178,7 +178,7 @@
 		<p class="about-text"> I am a student in Computer Science at ENSEEIHT, France. I am currently in my second year of Engineer's degree.
       <br>
       <br>
-      Passionate about video games since childhood and president of the video game development club of my school, I have been developing games for more than 2 years (and playing for more than 15 &#x1F604).
+      Passionate about video games since childhood and president of the video game development club of my school, I have been learning how to develop games for almost 2 years (and playing for more than 15 &#x1F604).
       I am also particularly interested in software and web development.
       <br>
       <br>
@@ -199,7 +199,7 @@
     <div class="PPP" id="ppp">
       <h2>PPP Slides</h2>
       <div class="slides">
-        <a target="_blank">
+        <a href=" " target="_blank">
           <p>Download the slides here</p>
         </a>
       </div>
