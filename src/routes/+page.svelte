@@ -199,7 +199,7 @@
     <div class="PPP" id="ppp">
       <h2>PPP Slides</h2>
       <div class="slides">
-        <a href="/document/PPP.pdf" target="_blank">
+        <a href= "{base} + /document/PPP.pdf" target="_blank">
           <p>Download the slides here</p>
         </a>
       </div>
