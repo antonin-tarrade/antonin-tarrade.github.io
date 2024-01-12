@@ -164,6 +164,9 @@
       svgPath: base + '/icons/email.svg'
     }
   ]
+
+  // ----PPP----
+  let pppLink = base + '/document/PPP.pdf';
 </script>
 
 <main class="main-content">
@@ -199,7 +202,7 @@
     <div class="PPP" id="ppp">
       <h2>PPP Slides</h2>
       <div class="slides">
-        <a href= "{base} + /document/PPP.pdf" target="_blank">
+        <a href= {pppLink} target="_blank">
           <p>Download the slides here</p>
         </a>
       </div>
