@@ -45,6 +45,18 @@
         text-decoration: none;
     }
 
+    @media (max-width: 700px) {
+        .resume{
+            width: 30%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .resume{
+            width: 40%;
+        }
+    }
+
     :global(.flag){
         width: 1.5em;
         height: 1.5em;

@@ -326,6 +326,18 @@
     background-color: #BE95C4;
   }
 
+  @media screen and (max-width: 800px) {
+    .PPP .slides{
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .PPP .slides{
+      width: 70%;
+    }
+  }
+
   .job-application h1{
     font-size: 2.5em;
     text-align: left;
