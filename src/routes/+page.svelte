@@ -26,7 +26,7 @@
       name: 'Satellite Graph Visualization Project',
       description: 'This project is made for the <i>Graph theory</i> course of my school. The goal is to visualize and annalyse the graph representing a cluster of satellites. For this project, the choice of the tools was free. I chose to use Unity3D in the goal of better representing the situation as well as to learn more about Unity3D. We have recently just started this project, so it is still a work in progress.',
       link: 'https://github.com/antonin-tarrade/Projet-Graphe',
-      img: base + '/img/graph-project-colored.png',
+      video: base + '/video/graph-project.mp4',
       tag: ['Unity3D', 'C#', 'Graph Theory', 'WIP'],
       category: Category.SCHOOL
     },
@@ -238,14 +238,29 @@
 
 <style>
     :global(html, body) {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font: 16px 'Roboto', sans-serif;
-        background-color: var(--background-color, #19112C);
-		    color: var(--text-color, #ffffff);
-        scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font: 16px 'Roboto', sans-serif;
+      background-color: var(--background-color, #19112C);
+      color: var(--text-color, #ffffff);
+      scroll-behavior: smooth;
     }
+
+    :global(body)::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('img/pattern5.png');
+      opacity: 0.03;
+      filter : invert(1);
+      pointer-events: none;
+      z-index: 0;
+    }
+
 
     .main-content {
         text-align: center;
