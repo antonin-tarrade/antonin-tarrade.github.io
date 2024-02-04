@@ -1,5 +1,8 @@
 <script>
+
+  
   import { base } from '$app/paths';
+  console.log(base);
   // ----Nav---- 
   import Nav from './Nav.svelte';
   export let navLinks = {
@@ -169,7 +172,7 @@
   let pppLink = base + '/document/PPP.pdf';
 </script>
 
-<main class="main-content">
+<main class="main-content" >
     <Nav links={navLinks} />
     <div class="name">
         <h1 class="name-title">ANTONIN TARRADE</h1>
@@ -254,7 +257,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-image: url('img/pattern5.png');
+      background-image: var(--background-img);
       opacity: 0.03;
       filter : invert(1);
       pointer-events: none;
