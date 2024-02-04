@@ -1,8 +1,5 @@
 <script>
-
-  
   import { base } from '$app/paths';
-  console.log(base);
   // ----Nav---- 
   import Nav from './Nav.svelte';
   export let navLinks = {
@@ -257,7 +254,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-image: var(--background-img);
+      background-image: url('/Eportfolio/img/pattern5.png');
       opacity: 0.03;
       filter : invert(1);
       pointer-events: none;
