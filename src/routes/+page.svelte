@@ -169,72 +169,74 @@
   let pppLink = base + '/document/PPP.pdf';
 </script>
 
-<main class="main-content" >
+<div class="background" style="--background-image:url({base}/img/pattern5.png)"> 
+  <main class="main-content" >
     <Nav links={navLinks} />
     <div class="name">
-        <h1 class="name-title">ANTONIN TARRADE</h1>
-        <h2 class="name-subtitle">Student in Computer Science, Aspiring Game developer & Software developer</h2>
+      <h1 class="name-title">ANTONIN TARRADE</h1>
+      <h2 class="name-subtitle">Student in Computer Science, Aspiring Game developer & Software developer</h2>
     </div>
-	<div class = "about" id="about">
-		<h1 class="about-title"> About me </h1>
-        <!-- TODO : Change text content -->
-		<p class="about-text"> I am a student in Computer Science at ENSEEIHT, France. I am currently in my second year of Engineer's degree.
-      <br>
-      <br>
-      Passionate about video games since childhood and president of the video game development club of my school, I have been learning how to develop games for almost 2 years (and playing for more than 15 &#x1F604).
-      I am also particularly interested in software and web development.
-      <br>
-      <br>
-      I am currently looking for a 4-to-6 months internship in the field of video games or software development to explore their respective professional world, as well as gain more experience.</p>
-	</div>
-
-  <div class="projects" id="projects">
-    <Filter {filterName} {filters} {objectsToFilter} {ObjectComponent}/>
-  </div>
-
-  <div class="experiences" id="experiences">
-    <h1>Professional Project - PPP</h1>
-    <h2>Experiences</h2>
-    {#each experiences as experience (experience.role)}
-    <Experience {experience}/>
-    {/each}
-    
-    <div class="PPP" id="ppp">
-      <h2>PPP Slides</h2>
-      <div class="slides">
-        <a href= {pppLink} target="_blank">
-          <p>Download the slides here</p>
-        </a>
+    <div class = "about" id="about">
+      <h1 class="about-title"> About me </h1>
+      <!-- TODO : Change text content -->
+      <p class="about-text"> I am a student in Computer Science at ENSEEIHT, France. I am currently in my second year of Engineer's degree.
+        <br>
+        <br>
+        Passionate about video games since childhood and president of the video game development club of my school, I have been learning how to develop games for almost 2 years (and playing for more than 15 &#x1F604).
+        I am also particularly interested in software and web development.
+        <br>
+        <br>
+        I am currently looking for a 4-to-6 months internship in the field of video games or software development to explore their respective professional world, as well as gain more experience.</p>
+      </div>
+      
+    <div class="projects" id="projects">
+      <Filter {filterName} {filters} {objectsToFilter} {ObjectComponent}/>
+    </div>
+  
+    <div class="experiences" id="experiences">
+      <h1>Professional Project - PPP</h1>
+      <h2>Experiences</h2>
+      {#each experiences as experience (experience.role)}
+      <Experience {experience}/>
+      {/each}
+      
+      <div class="PPP" id="ppp">
+        <h2>PPP Slides</h2>
+        <div class="slides">
+          <a href= {pppLink} target="_blank">
+            <p>Download the slides here</p>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="job-application">
-    <h1>Job (Internship) Applications</h1>
-    <h2>Resumes</h2>
-    <div class="resume-buttons">
-      {#each resumes as resume (resume.language)}
-      <Resume {resume}/>
-      {/each}
-    </div>
-    <h2>Cover Letters</h2>
-    <div class="cover-letters">
-      {#each coverLetters as letter (letter.company)}
-      <CoverLetter {letter}/>
-      {/each}
-    </div> 
-  </div>
   
-  <div class = "contacts">
-    <h1>Contacts</h1>
-    <h2> Let's get in touch !</h2>
-    <div class = "socials" id="contact">
-      {#each socials as social (social.name)}
-        <Social {social}/>
-      {/each}
+    <div class="job-application">
+      <h1>Job (Internship) Applications</h1>
+      <h2>Resumes</h2>
+      <div class="resume-buttons">
+        {#each resumes as resume (resume.language)}
+        <Resume {resume}/>
+        {/each}
+      </div>
+      <h2>Cover Letters</h2>
+      <div class="cover-letters">
+        {#each coverLetters as letter (letter.company)}
+        <CoverLetter {letter}/>
+        {/each}
+      </div> 
     </div>
-  </div>
-</main>
+  
+    <div class = "contacts">
+      <h1>Contacts</h1>
+      <h2> Let's get in touch !</h2>
+      <div class = "socials" id="contact">
+        {#each socials as social (social.name)}
+        <Social {social}/>
+        {/each}
+      </div>
+    </div>
+  </main>
+</div>
 
 <style>
     :global(html, body) {
@@ -247,14 +249,14 @@
       scroll-behavior: smooth;
     }
 
-    :global(body)::before {
+    .background::before {
       content: "";
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-image: url('/Eportfolio/img/pattern5.png');
+      background-image: var(--background-image);
       opacity: 0.03;
       filter : invert(1);
       pointer-events: none;
