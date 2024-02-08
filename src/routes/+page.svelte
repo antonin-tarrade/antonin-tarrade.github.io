@@ -6,7 +6,6 @@
       'About': base + '/',
       'Projects': base + '/projects',
       'Experiences' : base + '/experiences',
-      'PPP': base + '/ppp',
       'Contact': base + '/contact'
   };
 
@@ -165,8 +164,6 @@
     }
   ]
 
-  // ----PPP----
-  let pppLink = base + '/document/PPP.pdf';
 </script>
 
 <div class="background" style="--background-image:url({base}/img/pattern5.png)"> 
@@ -178,7 +175,6 @@
     </div>
     <div class = "about" id="about">
       <h1 class="about-title"> About me </h1>
-      <!-- TODO : Change text content -->
       <p class="about-text"> I am a student in Computer Science at ENSEEIHT, France. I am currently in my second year of Engineer's degree.
         <br>
         <br>
@@ -199,15 +195,6 @@
       {#each experiences as experience (experience.role)}
       <Experience {experience}/>
       {/each}
-      
-      <div class="PPP" id="ppp">
-        <h2>PPP Slides</h2>
-        <div class="slides">
-          <a href= {pppLink} target="_blank">
-            <p>Download the slides here</p>
-          </a>
-        </div>
-      </div>
     </div>
   
     <div class="job-application">
@@ -288,28 +275,26 @@
 
 	.about{
 		text-align: justify;
-	}
-
-	.about-title{
-		font-size: 2em;
-		margin-bottom: 0.1em;
-	}
-
-	.about-text{
-		font-size: 1em;
-		margin-top: 0.1em;
-		max-width: 30em;
-	}
-
-  .projects{
-    margin-top: 5em;
-  }
-
-  .PPP{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+	}
+
+	.about-title{
+		font-size: 2em;
+		max-width: 5em;
+	}
+
+	.about-text{
+		font-size: 1em;
+		max-width: 50em;
+	}
+
+
+  .projects{
+    margin-top: 5em;
   }
 
   .experiences h1{
@@ -320,39 +305,6 @@
   .experiences h2{
     font-size: 2em;
     text-align: center;
-  }
-
-  .PPP .slides{
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width : 30%;
-    height: 2em;
-    background-color: #ffffff;
-    border-radius: 10px;
-  }
-
-  .PPP .slides a{
-    text-decoration: none;
-    color: #000000;
-  }
-
-  .PPP .slides:hover{
-    cursor: pointer;
-    background-color: #BE95C4;
-  }
-
-  @media screen and (max-width: 800px) {
-    .PPP .slides{
-      width: 50%;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .PPP .slides{
-      width: 70%;
-    }
   }
 
   .job-application h1{
@@ -380,8 +332,6 @@
     align-items: center;
   }
 
-
-
   .contacts{
     margin-top: 5em;
   }
@@ -397,5 +347,10 @@
     justify-content: center;
     align-items: center;
   }
+
+
+  /* Media Queries */
+  
+
 
 </style>
