@@ -23,11 +23,28 @@
     },
     {
       name: 'Satellite Graph Visualization Project',
-      description: 'This project is made for the <i>Graph theory</i> course of my school. The goal is to visualize and annalyse the graph representing a cluster of satellites. For this project, the choice of the tools was free. I chose to use Unity3D in the goal of better representing the situation as well as to learn more about Unity3D. We have recently just started this project, so it is still a work in progress.',
+      description: 'This project is made for the <i>Graph theory</i> course of my school. The goal is to visualize and annalyse the graph representing a cluster of satellites. For this project, the choice of the tools was free. I chose to use Unity3D in the goal of better representing the situation as well as to learn more about Unity3D.',
       link: 'https://github.com/antonin-tarrade/Projet-Graphe',
       video: base + '/video/graph-project.mp4',
-      tag: ['Unity3D', 'C#', 'Graph Theory', 'WIP'],
+      tag: ['Unity3D', 'C#', 'Graph Theory'],
       category: Category.SCHOOL
+    },
+
+    {
+      name: 'Space Travelers',
+      description: 'In this game, two players play against each others, as the aliens vs the astronauts, competiting for the holy chicken. Each player chan choose X different character to play and will play turn by turn. Each round the replays of the previous ones are played and you can interact with them. The goal of the game is to be the players with most chicken captured at the end of the game.',
+      link: 'https://github.com/antonin-tarrade/Project-ChristmasTravelers',
+      video : base + '/video/Space-Travelers.mp4',
+      tag: ['Unity2D', 'C#', 'Game Jam', 'WIP'],
+      category: Category.GAME
+    },
+    {
+      name: 'Sausage Serenity',
+      description: 'This game was made as a participation of the Global Game Jam 2024. The theme of this yeear was <i>Make me laugh</i>. In this game you play as a sausage dog and wonder in a ciy filled with depression. As you make your way through the city, you\'ll meet various characters and have to respond to their requests to restore their laughter. The goal of the game is to make the city a better place.',
+      link: 'https://github.com/antonin-tarrade/SausageSerenity',
+      video : base + '/video/Sausage-serenity.mp4',
+      tag: ['Godot','GDScript','Global Game Jam'],
+      category: Category.GAME
     },
     {
       name: 'Eportfolio',
