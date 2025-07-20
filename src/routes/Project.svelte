@@ -80,13 +80,13 @@
 
     .video-blur {
         position: absolute;
-        width: 150%; /* Adjust this value to control the zoom level */
-        height: 150%; /* Adjust this value to control the zoom level */
-        left: -25%; /* Adjust this value to center the video */
-        top: -25%; /* Adjust this value to center the video */
+        width: 150%;
+        height: 150%;
+        left: -25%;
+        top: -25%;
         object-fit: cover;
-        filter: blur(8px); /* Adjust this value to control the blur level */
-        opacity: 0.8; /* Adjust this value to control the opacity */
+        filter: blur(8px);
+        opacity: 0.8;
     }
 
     .video-focus {
